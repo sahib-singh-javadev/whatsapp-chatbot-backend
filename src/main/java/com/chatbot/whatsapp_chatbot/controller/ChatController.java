@@ -9,7 +9,7 @@ import com.chatbot.whatsapp_chatbot.service.ChatService;
 
 import io.swagger.v3.oas.annotations.Operation;
 
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/webhook")
 public class ChatController {

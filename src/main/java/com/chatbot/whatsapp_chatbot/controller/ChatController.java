@@ -17,7 +17,7 @@ public class ChatController {
     @Autowired
     private ChatService chatService;
     @Operation(summary = "Receive message and return chatbot reply")
-    @PostMapping
+    @PostMapping("/message")
     public MessageResponse reply(@RequestBody MessageRequest request) {
 
         String message = request.getMessage();
@@ -27,7 +27,7 @@ public class ChatController {
 
         return new MessageResponse(response);
     }
-    @GetMapping("/")
+    @GetMapping("/test")
     public String home() {
     	return "Backend is running!";
     }

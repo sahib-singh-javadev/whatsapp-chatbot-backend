@@ -2,13 +2,16 @@
 
 ## 📌 Overview
 
-This project simulates a WhatsApp chatbot backend built using Spring Boot. It exposes a REST API that accepts user messages and returns predefined responses. The application follows a clean layered architecture and includes API documentation and database logging.
+This project simulates a WhatsApp chatbot backend built using Spring Boot. It exposes REST APIs that accept user messages and return predefined responses. The application follows a clean layered architecture and includes API documentation and database logging.
 
 ---
 
 ## 🚀 Features
 
-* REST API endpoint `/webhook`
+* REST API endpoints:
+
+  * `/webhook/test` (Health Check)
+  * `/webhook/message` (Chat API)
 * JSON request & response handling
 * Layered architecture (Controller → Service → Repository)
 * H2 in-memory database for logging messages with timestamp
@@ -28,11 +31,25 @@ This project simulates a WhatsApp chatbot backend built using Spring Boot. It ex
 
 ---
 
-## 📡 API Example
+## 📡 API Examples
 
-### POST /webhook
+### 🔹 1. Health Check
 
-#### Request
+#### GET /webhook/test
+
+**Response**
+
+```text
+Backend is running!
+```
+
+---
+
+### 🔹 2. Chat API
+
+#### POST /webhook/message
+
+**Request**
 
 ```json
 {
@@ -40,7 +57,7 @@ This project simulates a WhatsApp chatbot backend built using Spring Boot. It ex
 }
 ```
 
-#### Response
+**Response**
 
 ```json
 {
@@ -62,11 +79,29 @@ mvn spring-boot:run
 
 The application is deployed on Render:
 
-👉 https://.onrender.com
+👉 https://whatsapp-chatbot-backend-1-7r25.onrender.com
 
-### Swagger UI (Live)
+---
 
-👉 https://your-app.onrender.com/swagger-ui/index.html
+### 🔗 Live API Endpoints
+
+* Health Check:
+  👉 https://whatsapp-chatbot-backend-1-7r25.onrender.com/webhook/test
+
+* Chat API (POST):
+  👉 https://whatsapp-chatbot-backend-1-7r25.onrender.com/webhook/message
+
+---
+
+### 📄 Swagger UI (Live)
+
+👉 https://whatsapp-chatbot-backend-1-7r25.onrender.com/swagger-ui/index.html
+
+---
+
+### 📑 API Docs (JSON)
+
+👉 https://whatsapp-chatbot-backend-1-7r25.onrender.com/v3/api-docs
 
 ---
 

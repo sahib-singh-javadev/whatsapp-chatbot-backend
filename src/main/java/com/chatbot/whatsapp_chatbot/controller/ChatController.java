@@ -27,4 +27,8 @@ public class ChatController {
 
         return new MessageResponse(response);
     }
+    @GetMapping("/")
+    public String home() {
+    	return "Backend is running!";
+    }
 }

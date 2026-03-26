@@ -16,6 +16,8 @@ public class ChatController {
 
     @Autowired
     private ChatService chatService;
+
+    // ✅ POST API (actual chatbot)
     @Operation(summary = "Receive message and return chatbot reply")
     @PostMapping("/message")
     public MessageResponse reply(@RequestBody MessageRequest request) {
@@ -27,8 +29,16 @@ public class ChatController {
 
         return new MessageResponse(response);
     }
+
+    // ✅ Health check
     @GetMapping("/test")
     public String home() {
-    	return "Backend is running!";
+        return "Backend is running!";
+    }
+
+    // ✅ Friendly message for browser users
+    @GetMapping("/message")
+    public String messageInfo() {
+        return "This endpoint only supports POST requests. Please use Postman or Swagger UI.";
     }
 }
